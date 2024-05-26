@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/ed_search"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/search_box_background"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_thin"
+            android:gravity="center_vertical"
+            android:hint="@string/search_now"
+            android:paddingStart="12dp"
+            android:singleLine="true"
+            android:textColor="@color/g_icon_tint"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/end_ed_search_guideline"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/secondHorizontalGuideline" />
+
+        <TextView
+            android:id="@+id/tv_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19.50dp"
+            android:fontFamily="@font/poppins_thin"
+            android:gravity="center"
+            android:text="Categories"
+            android:textColor="@color/g_black"
+            android:textSize="26dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/rvSearch" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_categories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintStart_toStartOf="@+id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+        <ProgressBar
+            android:id="@+id/progressbar_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/g_hint"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintStart_toStartOf="@id/startGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/tv_categories"
+            android:visibility="gone"
+            />
+
+
+        <FrameLayout
+            android:id="@+id/frame_scan"
+            android:layout_width="0dp"
+            android:layout_height="52.00dp"
+            android:layout_marginStart="6.50dp"
+            android:layout_marginEnd="6.50dp"
+            android:background="@drawable/favorite_background"
+            android:backgroundTint="@color/g_search_and_icons"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/ed_search"
+            app:layout_constraintEnd_toEndOf="@+id/end_scan_guideline"
+            app:layout_constraintStart_toEndOf="@id/end_ed_search_guideline"
+            app:layout_constraintTop_toTopOf="@+id/ed_search">
+
+            <ImageView
+                android:id="@+id/img_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_scan" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_microphone"
+            android:layout_width="0dp"
+            android:layout_height="52.00dp"
+            android:layout_marginStart="6.50dp"
+            android:layout_marginEnd="6.50dp"
+            android:background="@drawable/favorite_background"
+            android:backgroundTint="@color/g_search_and_icons"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/ed_search"
+            app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+            app:layout_constraintStart_toEndOf="@+id/end_scan_guideline">
+
+            <ImageView
+                android:id="@+id/img_microphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_microphone" />
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="19.50sp"
+            app:layout_constraintStart_toStartOf="@id/end_ed_search_guideline"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintTop_toTopOf="@id/ed_search"
+            app:layout_constraintBottom_toBottomOf="@id/ed_search"
+            android:gravity="center"
+            android:text="Cancel"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="#919394"
+            android:visibility="gone"
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_ed_search_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_scan_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.83" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/firstHorizontalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.01" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/secondHorizontalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
